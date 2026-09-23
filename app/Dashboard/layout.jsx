@@ -17,21 +17,6 @@ import { useRouter } from "next/navigation";
 import NavButton from "../UI/buttons/NavButton";
 
 
-// ============================================================================
-// MOMENTUM MONITOR — DASHBOARD SHELL (Side Nav Layout)
-// Redesigned from the provided DBlayout structure. Same core idea — a
-// collapsible sidebar next to a content panel — rebuilt on the light theme
-// with:
-//   - Sidebar as a floating, elevated card (rounded, shadowed, sits with a
-//     smaller top offset than the main panel so it visually reads as
-//     "lifted" in front of the content, per your note)
-//   - Full nav: Dashboard, Finance, Health & Fitness, Journal, Profile
-//   - Desktop: icon-collapse toggle (kept from your version)
-//   - Mobile (<md): sidebar becomes a slide-in drawer behind a hamburger,
-//     with a backdrop — the fixed-width "15%/5%" approach doesn't hold up
-//     on small screens, so this swaps pattern rather than just shrinking it
-// ============================================================================
-
 const NAV_ITEMS = [
   { key: "dashboard", label: "Dashboard", url: "dashboard", icon: LayoutDashboard },
   { key: "finance", label: "Finance", url: "dashboard/finance", icon: Wallet },
@@ -44,7 +29,10 @@ export default function DBLayout({ children }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [active, setActive] = useState("dashboard");
   
-
+  const router = useRouter();
+  const handleLogOut = () => {
+    router.push("/")
+  }
   return (
     <div className="flex min-h-screen w-full bg-slate-100">
 
@@ -190,7 +178,7 @@ s
             active={false}
             collapsed={collapsed}
             danger
-            onClick={() => { }}
+            // onClick={}
           />
         </div>
       </aside>
