@@ -5,7 +5,6 @@ import {
   Wallet,
   BookOpen,
   ArrowRight,
-  Sparkles,
   Ruler,
   Weight,
   Calendar,

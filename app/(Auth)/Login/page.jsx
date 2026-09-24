@@ -3,12 +3,10 @@ import GoogleIcon from "@/app/UI/(authUI)/GoogleIcon";
 import Scene from "@/app/UI/(authUI)/Scene";
 import FormField from "@/app/UI/(dbUI)/FormField";
 import { ArrowLeft, Lock, MailIcon } from "lucide-react";
-import React, { useState } from "react";
+import React, { useState } from "react"
 
 
-
-/* ---------- page ---------- */
-export default function LoginPage({ onSubmit }) {
+export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [showPw, setShowPw] = useState(false);
@@ -30,7 +28,7 @@ export default function LoginPage({ onSubmit }) {
         if (Object.keys(e).length) return;
         setLoading(true);
         try {
-            await onSubmit?.({ email, password, remember });
+            console.log(email,password,remember)
         } finally {
             setLoading(false);
         }
