@@ -43,3 +43,5 @@ next-env.d.ts
 
 # Do not show
 public
+banner.png
+favicon.ico

@@ -5,7 +5,6 @@ import {
   ArrowLeft,
   Menu,
   X,
-  Sparkles,
   LayoutDashboard,
   Wallet,
   Activity,
@@ -15,7 +14,8 @@ import {
 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import NavButton from "../UI/buttons/NavButton";
-
+import Image from 'next/image';
+import banner from "@/app/banner.png";
 
 const NAV_ITEMS = [
   { key: "dashboard", label: "Dashboard", url: "dashboard", icon: LayoutDashboard },
@@ -28,7 +28,7 @@ export default function DBLayout({ children }) {
   const [collapsed, setCollapsed] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [active, setActive] = useState("dashboard");
-  
+
   const router = useRouter();
   const handleLogOut = () => {
     router.push("/")
@@ -39,8 +39,15 @@ export default function DBLayout({ children }) {
       {/* ---------------- Mobile top bar ---------------- */}
       <div className="fixed inset-x-0 top-0 z-30 flex items-center justify-between border-b border-slate-200 bg-white px-4 py-3 md:hidden">
         <div className="flex items-center gap-2">
-          <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-linear-to-br from-teal-400 to-sky-500">
-            <Sparkles className="h-3.5 w-3.5 text-white" strokeWidth={2.5} />
+          <div className="flex h-7 w-7 items-center justify-center rounded-lg ">
+
+            <Image
+              alt='Momentum_monitor'
+              width={20}
+              height={20}
+              src={banner}
+            />
+
           </div>
           <span className="text-sm font-semibold tracking-tight text-slate-900">
             Momentum Monitor
@@ -55,7 +62,7 @@ export default function DBLayout({ children }) {
         </button>
       </div>
 
-s
+      s
       {/* ---------------- Mobile drawer + backdrop ---------------- */}
       {mobileOpen && (
         <div className="fixed inset-0 z-40 md:hidden">
@@ -66,8 +73,15 @@ s
           <div className="absolute left-0 top-0 h-full w-[78%] max-w-75 animate-slide-in bg-white p-4 shadow-2xl">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-linear-to-br from-teal-400 to-sky-500">
-                  <Sparkles className="h-3.5 w-3.5 text-white" strokeWidth={2.5} />
+                <div className="flex h-7 w-7 items-center justify-center rounded-lg ">
+
+                  <Image
+                    alt='Momentum_monitor'
+                    width={20}
+                    height={20}
+                    src={banner}
+                  />
+
                 </div>
                 <span className="text-sm font-semibold tracking-tight text-slate-900">
                   Momentum Monitor
@@ -130,8 +144,13 @@ s
         <div className="flex items-center justify-between p-4">
           {!collapsed && (
             <div className="flex items-center gap-2">
-              <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-linear-to-br from-teal-400 to-sky-500">
-                <Sparkles className="h-3.5 w-3.5 text-white" strokeWidth={2.5} />
+              <div className="flex h-7 w-7 items-center justify-center rounded-lg ">
+                <Image
+                  alt='Momentum_monitor'
+                  width={20}
+                  height={20}
+                  src={banner}
+                />
               </div>
               <span className="text-sm font-semibold tracking-tight text-slate-900">
                 Momentum
@@ -159,7 +178,7 @@ s
               active={active === item.key}
               collapsed={collapsed}
               onClick={() => setActive(item.key)
-              } 
+              }
             />
           ))}
         </nav>
@@ -178,7 +197,7 @@ s
             active={false}
             collapsed={collapsed}
             danger
-            // onClick={}
+          // onClick={}
           />
         </div>
       </aside>
@@ -190,7 +209,7 @@ s
             aria-hidden="true"
             className="pointer-events-none absolute inset-0 bg-linear-to-br from-teal-100 via-white to-sky-200"
           />
-          <div className="relative z-10 p-3 sm:p-5">{children}</div>
+          <div className="relative z-10 ">{children}</div>
         </div>
       </div>
 
@@ -199,7 +218,7 @@ s
           from { transform: translateX(-100%); }
           to { transform: translateX(0); }
         }
-        .animate-slide-in { animation: slide-in 2ms ease-out; }
+        .animate-slide-in { animation: slide-in 5ms ease-out; }
       `}</style>
     </div>
   );

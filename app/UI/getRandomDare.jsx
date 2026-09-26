@@ -1,7 +1,5 @@
-"use clinet"
+"use client"
 import React, { useEffect, useState } from "react";
-import { Flame, RefreshCcw, Timer } from "lucide-react";
-
 
 const DARE_POOL = [
   "Do 20 push-ups before your next meal.",

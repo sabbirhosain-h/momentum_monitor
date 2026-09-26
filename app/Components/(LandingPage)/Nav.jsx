@@ -1,18 +1,24 @@
 import Button from '@/app/UI/buttons/Button';
 import Button2 from '@/app/UI/buttons/Button2';
-import { ArrowRight, Sparkle } from 'lucide-react';
-import { useRouter } from 'next/navigation';
+import Image from 'next/image';
+import banner from "@/app/banner.png";
 import React from 'react'
 
 export default function Nav() {
-  const router = useRouter();
+
 
   return (
       <header className="relative z-20">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 sm:px-8">
           <div className="flex items-center gap-2.5">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-linear-to-br from-teal-400 to-sky-500 shadow-md shadow-teal-500/30 transition-transform hover:rotate-6">
-              <Sparkle className="h-4.5 w-4.5 text-white" strokeWidth={2.5} />
+            <div className="flex h-15 w-15 items-center justify-center rounded-lg  shadow-teal-500/30 transition-transform hover:rotate-2">
+            <Image
+                alt='Momentum_monitor'
+                width={200}
+                height={200}
+                src={banner} 
+            />
+             
             </div>
             <span className="text-[15px] font-semibold tracking-tight text-slate-900">
               Momentum Monitor
